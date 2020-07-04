@@ -1,6 +1,6 @@
-# flucommerce
+# Flucommerce
 
-A new Flutter project.
+My First Flutter E-Commerce project.
 
 ## Getting Started
 
