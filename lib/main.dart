@@ -43,29 +43,23 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
-                        Expanded(
-                          child: Icon(
+                        Icon(
                             Icons.menu,
                             color: Colors.white,
-                          ),
                         ),
-                        SizedBox(
-                          width: 50,
-                        ),
+                        Spacer(),
                         Text(
                           "Flucommerce",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
-                        SizedBox(
-                          width: 50,
-                        ),
-                        Expanded(
-                          child: Icon(
+                        Spacer(),
+                        Icon(
                             Icons.shopping_cart,
                             color: Colors.white,
                           ),
-                        )
                       ],
                     )),
                 Positioned(
@@ -205,8 +199,11 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailProduk()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DetailProduk()));
                       },
                       child: Column(
                         children: <Widget>[
@@ -229,8 +226,9 @@ class _HomePageState extends State<HomePage> {
                                         borderRadius: BorderRadius.only(
                                             bottomRight: Radius.circular(20))),
                                     child: Image.network(
-                                      "http://via.placeholder.com/288x188", 
-                                      fit: BoxFit.cover ,),
+                                      "http://via.placeholder.com/288x188",
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                   Container(
                                     padding: EdgeInsets.all(10),
@@ -242,7 +240,8 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   Container(
-                                    padding: EdgeInsets.only(left: 10, right: 10),
+                                    padding:
+                                        EdgeInsets.only(left: 10, right: 10),
                                     child: Text(
                                       "Stok : 12",
                                       style: TextStyle(fontSize: 14),
@@ -257,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                   ),
                                   GestureDetector(
-                                    onTap: (){
+                                    onTap: () {
                                       print("to cart");
                                     },
                                     child: Container(
@@ -269,14 +268,24 @@ class _HomePageState extends State<HomePage> {
                                               topLeft: Radius.circular(20))),
                                       child: Row(
                                         children: <Widget>[
-                                          SizedBox(width: 20,),
-                                          Icon(Icons.shopping_cart, color: Colors.white, size: 18,),
-                                          SizedBox(width: 5,),
-                                          Text("Add to Cart", style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontStyle: FontStyle.italic,
-                                            color: Colors.white
-                                          ),)
+                                          SizedBox(
+                                            width: 20,
+                                          ),
+                                          Icon(
+                                            Icons.shopping_cart,
+                                            color: Colors.white,
+                                            size: 18,
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            "Add to Cart",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontStyle: FontStyle.italic,
+                                                color: Colors.white),
+                                          )
                                         ],
                                       ),
                                     ),
@@ -300,29 +309,49 @@ class _HomePageState extends State<HomePage> {
       ),
       bottomNavigationBar: Container(
         height: 50,
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[
-            Icon(
-              Icons.home,
-              color: Colors.blue,
-            ),
-            Icon(
-              Icons.favorite,
-              color: Colors.blue,
-            ),
-            Icon(
-              Icons.compare_arrows,
-              color: Colors.blue,
-            ),
-            Icon(
-              Icons.person_pin,
-              color: Colors.blue,
-            ),
-          ],
+        child: BottomAppBar(
+          shape: CircularNotchedRectangle(),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: IconButton(
+                  icon: Icon(Icons.home),
+                  onPressed: (){},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 30),
+                child: IconButton(
+                  icon: Icon(Icons.favorite),
+                  onPressed: (){},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: IconButton(
+                  icon: Icon(Icons.compare_arrows),
+                  onPressed: (){},
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: IconButton(
+                    icon: Icon(Icons.person_pin),
+                    onPressed: (){},
+                  ),
+              ),
+            ],
+          ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.orange,
+        child: Icon(Icons.add),
+        onPressed: (){}
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
