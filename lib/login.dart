@@ -19,16 +19,20 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Stack(
-            alignment: Alignment.center,
-            overflow: Overflow.visible,
-            children: <Widget>[
-
-            ],
-          )
-        ],
+      body: SingleChildScrollView(
+        child: Stack(
+          alignment: Alignment.center,
+          overflow: Overflow.visible,
+          children: <Widget>[
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

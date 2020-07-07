@@ -1,3 +1,4 @@
+import 'package:flucommerce/login.dart';
 import 'package:flucommerce/tabPage/detailProduk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -68,6 +69,7 @@ class _HomePageState extends State<HomePage> {
                     right: 10,
                     child: Container(
                       height: 180,
+                      width: MediaQuery.of(context).size.width,
                       child: Swiper(
                         itemBuilder: (context, index) {
                           return Image.network(
@@ -76,6 +78,8 @@ class _HomePageState extends State<HomePage> {
                         itemCount: 3,
                         viewportFraction: 0.8,
                         scale: 0.9,
+                        autoplay: true,
+                        itemWidth: MediaQuery.of(context).size.width,
                       ),
                     )),
                 Positioned(
@@ -208,14 +212,14 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: <Widget>[
                           Card(
-                            borderOnForeground: true,
-                            shadowColor: Colors.black,
+                            shadowColor: Colors.black87,
                             child: Container(
                               height: 220,
                               width: 130,
                               decoration: BoxDecoration(
                                   // border: Border.all(color: Colors.black),
-                                  borderRadius: BorderRadius.circular(10)),
+                                  borderRadius: BorderRadius.circular(10),
+                              ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -339,7 +343,9 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(right: 20),
                 child: IconButton(
                     icon: Icon(Icons.person_pin),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Login()));
+                    },
                   ),
               ),
             ],
