@@ -229,10 +229,7 @@ class _HomePageState extends State<HomePage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.only(
                                             bottomRight: Radius.circular(20))),
-                                    child: Image.network(
-                                      "http://via.placeholder.com/288x188",
-                                      fit: BoxFit.cover,
-                                    ),
+                                    child: Hero( tag: 'chair',child: Image.asset("assets/bigchair.png"))
                                   ),
                                   Container(
                                     padding: EdgeInsets.all(10),
