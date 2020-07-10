@@ -55,8 +55,6 @@ class _DetailProdukState extends State<DetailProduk> {
                           color: Colors.white
                         ),),
                       Spacer(),
-                      Icon(Icons.favorite, color: Colors.white,),
-                      SizedBox(width: 20,),
                       Icon(Icons.shopping_cart, color: Colors.white,),
                     ],
                   )),

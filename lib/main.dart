@@ -1,3 +1,4 @@
+import 'package:flucommerce/addProduk.dart';
 import 'package:flucommerce/login.dart';
 import 'package:flucommerce/tabPage/detailProduk.dart';
 import 'package:flutter/material.dart';
@@ -352,7 +353,9 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         child: Icon(Icons.add),
-        onPressed: (){}
+        onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>AddProduk()));
+        }
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
