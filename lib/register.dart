@@ -1,22 +1,21 @@
-import 'package:flucommerce/register.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter login',
-      home: Login(),
+      title: 'Register',
+      home: Register(),
     );
   }
 }
 
-class Login extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,14 +38,17 @@ class _LoginState extends State<Login> {
                   left: 20,
                   right: 20,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
+                      Icon(Icons.arrow_back_ios, color: Colors.white,),
+                      Spacer(),
                       Icon(Icons.shopping_cart, color: Colors.white,),
                       Text("Flucommerce", style: TextStyle(
                         fontSize: 24,
                         color: Colors.white,
                         fontWeight: FontWeight.bold
-                      ),)
+                      ),),
+                      Spacer(),
                     ],
                   )
                 ),
@@ -58,7 +60,7 @@ class _LoginState extends State<Login> {
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.all(10),
-                    child: Text("LOGIN", style: TextStyle(
+                    child: Text("Register", style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic
@@ -69,8 +71,18 @@ class _LoginState extends State<Login> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         icon: Icon(Icons.person),
-                        labelText: 'Username or Email',
-                        hintText: "Username or Email"
+                        labelText: 'Username',
+                        hintText: "Username"
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.email),
+                        labelText: 'Email',
+                        hintText: "Email"
                       ),
                     ),
                   ),
@@ -84,6 +96,17 @@ class _LoginState extends State<Login> {
                         suffixIcon: Icon(Icons.remove_red_eye)
                       ),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        icon: Icon(Icons.lock),
+                        labelText: 'Re-type Password',
+                        hintText: "Re-type Password",
+                        suffixIcon: Icon(Icons.remove_red_eye)
+                      ),
+                    ),
                   )
                 ],
               ),
@@ -94,40 +117,36 @@ class _LoginState extends State<Login> {
               child: Column(
                 children: <Widget>[
                   Container(
-                      height: 50,
-                      width: 200,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            blurRadius: 5,
-                            color: Colors.grey,
-                            offset: Offset(0, 5)
-                          )
-                        ]
-                      ),
-                      child: Center(
-                        child: Text("LOGIN", style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                          color: Colors.white
-                        ),),
-                      ),
+                    height: 50,
+                    width: 200,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Colors.grey,
+                          offset: Offset(0, 5)
+                        )
+                      ]
                     ),
+                    child: Center(
+                      child: Text("Register", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.white
+                      ),),
+                    ),
+                  ),
                   SizedBox(height: 20,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text("Don't have account? "),
-                      GestureDetector(
-                        onTap: () => Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => Register())),
-                        child: Text("Register Here!", style: TextStyle(
-                          color: Colors.blue,
-                          fontStyle: FontStyle.italic,
-                        ),),
-                      )
+                      Text("You have account? "),
+                      Text("Login Here!", style: TextStyle(
+                        color: Colors.blue,
+                        fontStyle: FontStyle.italic,
+                      ),)
                     ],
                   ),
                 ],
