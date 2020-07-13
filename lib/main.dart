@@ -1,6 +1,8 @@
 import 'package:flucommerce/addProduk.dart';
+import 'package:flucommerce/cart.dart';
 import 'package:flucommerce/login.dart';
 import 'package:flucommerce/tabPage/detailProduk.dart';
+import 'package:flucommerce/tabPage/favorite.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
@@ -58,10 +60,14 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.white),
                         ),
                         Spacer(),
-                        Icon(
-                            Icons.shopping_cart,
-                            color: Colors.white,
-                          ),
+                        GestureDetector(
+                          onTap: ()=>{Navigator.push(context, MaterialPageRoute(
+                            builder: (context)=>Cart()))},
+                          child: Icon(
+                              Icons.shopping_cart,
+                              color: Colors.white,
+                            ),
+                        ),
                       ],
                     )),
                 Positioned(
@@ -320,14 +326,18 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.only(left: 20),
                 child: IconButton(
                   icon: Icon(Icons.home),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.pop(context);
+                  },
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 30),
                 child: IconButton(
                   icon: Icon(Icons.favorite),
-                  onPressed: (){},
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Favorite()));
+                  },
                 ),
               ),
               Padding(
